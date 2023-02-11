@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js"></script>
+  <script src="partikel.js"></script>
+  <script src="database.js" defer></script>
+  <link rel="Stylesheet" href="style.css">
+  </link>
+  <title>Firework Fun</title>
+</head>
+
+<body>
+  <h1> Firework Fun!</h1>
+  <h2>Create your own firework using the Menu on the right.
+    Save your firework.
+    Have fun!
+  </h2>
+
+  <form>
+
+    <fieldset>
+      <label for="startColor">First color</label>
+      <input type="color" id="startColor" name="startColor" value="#ffffff">
+
+    </fieldset>
+
+    <fieldset> <label for="startColor">Second color</label>
+      <input type="color" id="endColor" name="endColor" value="#ffffff">
+
+    </fieldset>
+
+    <fieldset>
+      <label for="particleSize">Particle size</label>
+      <input type="range" name="particleSize" id="particleSize" min="1" max="10" step="0.5" value="4">
+
+    </fieldset>
+
+    <fieldset>
+      <label for="spawnAmount">Particle amount</label>
+      <input type="range" name="spawnAmount" id="spawnAmount" min="1" max="50" step="0.2" value="2">
+
+    </fieldset>
+    <fieldset>
+
+      <label for="ParticleForms">ParticleForm:</label>
+      <select name=" particleForm" id="ParticleForm">
+        <option id="particles">Default</option>
+        <option id="particleHeart">Heart</option>
+        <option id="particleCircle">Circle</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <input id="saveBtn" type="button" value="Save">
+      <input id="deleteBtn" type="button" value="delete">
+    </fieldset>
+    <fieldset>
+      <div id="output"></div>
+    </fieldset>
+  </form>
+  <canvas id="canvas" width=900 height=550></canvas>
+  <button class="buttonEntry" data-entry="">1</button>
+  <button class="buttonEntry" data-entry="">2</button>
+  <button class="buttonEntry" data-entry="">3</button>
+  <button class="buttonEntry" data-entry="">4</button>
+</body>
+<footer>
+  <h2>Endabgabe EIA 2 | Gaia Galli Matrikelnummer: (268015) und Nina Distler Matrikelnummer: (268014)</h2>
+</footer>
+
+</html>
