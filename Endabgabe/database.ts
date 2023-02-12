@@ -47,7 +47,7 @@ namespace Feuerwerk {
         // https://webuser.hs-furtwangen.de/~distlern/Database/Index.php?command=create&collection=Items
         console.log(JSON.stringify(json));
         console.log("test");
-        let url: string = "https://webuser.hs-furtwangen.de/~distlern/Database/Index.php/?";
+        let url: string = "https://webuser.hs-furtwangen.de/~galligai/database/";
         //let response: Response = await fetch(url + query.toString());
         console.log("response", url + query.toString());
         console.log("data.sent");
