@@ -60,7 +60,9 @@ var Fireworking;
         for (let a = 0; a < Number(spawnAmount); a++) {
             let particle = { x: startX, y: startY, xVel: random(-5, 5), yVel: random(-5, 5) };
             particles.push(particle);
+            console.log(particle);
         }
+        //*Geschwindigkeit ist auf Random gestellt in einem Bereich von -5, 5 desswegen wird es vermutich immer schneller. Versuchen statt Random einen festen wert eingeben
         window.requestAnimationFrame(updateFirework);
     }
     function drawOnCanvas() {
@@ -74,7 +76,7 @@ var Fireworking;
     /*drawFireworks();
     updateFirework()
 
-
+ 
 
 function drawFireworks(): void {
     ctx.clearRect(0, 0, canvas.width, canvas.height);

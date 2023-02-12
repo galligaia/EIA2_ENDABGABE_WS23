@@ -56,7 +56,7 @@ namespace Fireworking {
         endColor = params.get("endColor")!;
         particleSize = params.get("particleSize")!;
         spawnAmount = params.get("spawnAmount")!;
-        ParticleForm = params.get("ParticleForm")!; 
+        ParticleForm = params.get("ParticleForm")!;
 
         arrayData = ["color one: " + startColor, "color two: " + endColor, "Particle Size: " + particleSize, "Particle Amount: " + spawnAmount, " Particle Form " + ParticleForm];
         let outputDiv: HTMLDivElement = document.getElementById("output") as HTMLDivElement;
@@ -72,17 +72,19 @@ namespace Fireworking {
     }
     function drawFireworks(): void {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-       
-            for (let a=0; a < Number (spawnAmount); a++){
-             let particle = { x: startX, y: startY, xVel: random(-5, 5), yVel: random(-5, 5) }
-        particles.push(particle);
+
+        for (let a = 0; a < Number(spawnAmount); a++) {
+            let particle = { x: startX, y: startY, xVel: random(-5, 5), yVel: random(-5, 5) }
+            particles.push(particle);
+            console.log(particle)
         }
-        
+        //*Geschwindigkeit ist auf Random gestellt in einem Bereich von -5, 5 desswegen wird es vermutich immer schneller. Versuchen statt Random einen festen wert eingeben
+
         window.requestAnimationFrame(updateFirework);
-        
-            
-           
-        
+
+
+
+
     }
 
     function drawOnCanvas(): void {
@@ -92,33 +94,33 @@ namespace Fireworking {
         startTime = new Date().getTime();
         currentColor = startColor;
         drawFireworks();
-       
-        
-     }
-        /*drawFireworks();
-        updateFirework()
 
+
+    }
+    /*drawFireworks();
+    updateFirework()
+
+ 
+
+function drawFireworks(): void {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let p = 0; p < Number(spawnAmount) ; p++) {
+        let particle = { x: startX, y: startY, xVel: random(-5, 5), yVel: random(-5, 5) }
+        particles.push(particle);
+      
+        
+    }
+    
+
+    
+     
+    
    
-
-    function drawFireworks(): void {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let p = 0; p < Number(spawnAmount) ; p++) {
-            let particle = { x: startX, y: startY, xVel: random(-5, 5), yVel: random(-5, 5) }
-            particles.push(particle);
-          
-            
-        }
-        
-
-        
-         
-        
-       
-    }*/
+}*/
     function updateFirework() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let p = 0; p < particles.length ; p++) {
-           let particle = particles[p];
+        for (let p = 0; p < particles.length; p++) {
+            let particle = particles[p];
             ctx.fillStyle = currentColor;
             ctx.globalAlpha = fade;
             ctx.fillRect(particle.x, particle.y, Number(particleSize), Number(particleSize));
@@ -128,19 +130,19 @@ namespace Fireworking {
 
         fade -= 0.01;
         if (fade < 0.5) {
-         currentColor = endColor
-         } 
-   
+            currentColor = endColor
+        }
+
         if (new Date().getTime() - startTime > time) { //hier noch heart shape einfügen irgendwie 
             if (new Date().getTime() - startTime > time + 2000) {
-            
-         }
-      
-        
-    } 
+
+            }
+
+
+        }
         window.requestAnimationFrame(updateFirework);
-      
-    
+
+
     }
 
     function random(min: number, max: number): number {
